@@ -29,8 +29,11 @@
 		// Cert Common Name : $cert['tbsCertificate']['subject']['rdnSequence'][1][0]['value']['utf8String']
 		// Cert Team ID : $cert['tbsCertificate']['subject']['rdnSequence'][2][0]['value']['utf8String']
 		// Organisation Name : $cert['tbsCertificate']['subject']['rdnSequence'][3][0]['value']['utf8String']
-		// Organisation Country : $cert['tbsCertificate']['subject']['rdnSequence'][4][0]['value']['utf8String']
+		// Invalid Before : $cert['tbsCertificate']['validity']['notBefore']['utcTime']
+		// Valid Until : $cert['tbsCertificate']['subject']['notAfter']['utcTime']
 		echo '<pre>', print_r($cert['tbsCertificate'], true), '</pre>';
 	}
+
+	runTests();
 
 ?>
