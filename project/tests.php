@@ -34,6 +34,15 @@
 		echo '<pre>', print_r($cert['tbsCertificate'], true), '</pre>';
 	}
 
+	function readFileToBytes() {
+		$filename = "resources/example_files/certificates/123.p12"; 
+		$handle = fopen($filename, "rb"); 
+		$fsize = filesize($filename); 
+		$contents = fread($handle, $fsize); 
+		$byteArray = unpack("N*",$contents); 
+		echo '<pre>'.print_r($byteArray, true).'</pre>'
+	}
+
 	runTests();
 
 ?>
